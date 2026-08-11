@@ -1,0 +1,2571 @@
+/*
+===============================================================================
+FOUNDATION — Obsidian Theme
+-------------------------------------------------------------------------------
+Identity: Structural / Architectural / Civil Engineering
+Core verb: Structure
+Metaphor: The vault is a building.
+Materials: Concrete / Steel / Drafting Paper
+Primary accent: Blueprint Blue
+Secondary accent: Construction Amber
+
+Design principle:
+80% productivity UI + 20% architectural engineering identity.
+
+No:
+- cosmic/glow aesthetics
+- volcanic/lava aesthetics
+- PCB/circuit aesthetics
+- heavy glassmorphism
+- strong blueprint grids behind reading content
+- fake technical telemetry
+- scrollbar-width / scrollbar-color
+===============================================================================
+*/
+
+
+/*=============================================================================
+00 — FOUNDATION TOKENS
+=============================================================================*/
+
+.theme-dark,
+.theme-light {
+
+    /*-----------------------------------------------------------------------
+    Typography
+    -----------------------------------------------------------------------*/
+
+    --foundation-font-ui:
+        "IBM Plex Sans",
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --foundation-font-reading:
+        "IBM Plex Sans",
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --foundation-font-mono:
+        "IBM Plex Mono",
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+
+    /*-----------------------------------------------------------------------
+    Geometry
+    -----------------------------------------------------------------------*/
+
+    --foundation-radius-sm: 3px;
+    --foundation-radius-md: 5px;
+    --foundation-radius-lg: 7px;
+
+    --foundation-border-width: 1px;
+
+    --foundation-content-width: 900px;
+    --foundation-readable-width: 760px;
+
+
+    /*-----------------------------------------------------------------------
+    Spacing
+    -----------------------------------------------------------------------*/
+
+    --foundation-space-1: 4px;
+    --foundation-space-2: 8px;
+    --foundation-space-3: 12px;
+    --foundation-space-4: 16px;
+    --foundation-space-5: 20px;
+    --foundation-space-6: 24px;
+    --foundation-space-7: 32px;
+    --foundation-space-8: 40px;
+
+
+    /*-----------------------------------------------------------------------
+    Motion
+    -----------------------------------------------------------------------*/
+
+    --foundation-transition-fast:
+        120ms ease;
+
+    --foundation-transition:
+        180ms ease;
+
+
+    /*-----------------------------------------------------------------------
+    Shadows
+    -----------------------------------------------------------------------*/
+
+    --foundation-shadow-sm:
+        0 1px 2px rgba(0, 0, 0, 0.08);
+
+    --foundation-shadow-md:
+        0 4px 14px rgba(0, 0, 0, 0.12);
+
+
+    /*-----------------------------------------------------------------------
+    Technical Labels
+    -----------------------------------------------------------------------*/
+
+    --foundation-label-spacing:
+        0.08em;
+
+}
+
+
+/*=============================================================================
+01 — DARK MODE
+-------------------------------------------------------------------------------
+Structural Night / Night Engineering Studio
+=============================================================================*/
+
+.theme-dark {
+
+    /* Surfaces */
+
+    --foundation-background:
+        #111417;
+
+    --foundation-surface:
+        #181c20;
+
+    --foundation-surface-editor:
+        #20252a;
+
+    --foundation-surface-raised:
+        #292f35;
+
+    --foundation-surface-hover:
+        #30373e;
+
+    --foundation-surface-active:
+        #343d45;
+
+
+    /* Structural */
+
+    --foundation-steel:
+        #3a424a;
+
+    --foundation-steel-light:
+        #4a545e;
+
+    --foundation-border:
+        #343b42;
+
+    --foundation-border-strong:
+        #4a535c;
+
+
+    /* Blueprint */
+
+    --foundation-blueprint:
+        #4f83cc;
+
+    --foundation-blueprint-light:
+        #78a7e3;
+
+    --foundation-blueprint-muted:
+        #355b8f;
+
+    --foundation-blueprint-soft:
+        rgba(79, 131, 204, 0.12);
+
+
+    /* Construction */
+
+    --foundation-amber:
+        #d8953d;
+
+    --foundation-amber-light:
+        #e4aa61;
+
+    --foundation-amber-soft:
+        rgba(216, 149, 61, 0.12);
+
+
+    /* Semantic */
+
+    --foundation-success:
+        #5f9b76;
+
+    --foundation-success-soft:
+        rgba(95, 155, 118, 0.12);
+
+    --foundation-warning:
+        #d8953d;
+
+    --foundation-warning-soft:
+        rgba(216, 149, 61, 0.12);
+
+    --foundation-error:
+        #c75c5c;
+
+    --foundation-error-soft:
+        rgba(199, 92, 92, 0.12);
+
+    --foundation-info:
+        #4f83cc;
+
+    --foundation-info-soft:
+        rgba(79, 131, 204, 0.12);
+
+
+    /* Text */
+
+    --foundation-text:
+        #dce1e5;
+
+    --foundation-text-secondary:
+        #9aa4ae;
+
+    --foundation-text-muted:
+        #6f7881;
+
+    --foundation-text-faint:
+        #555d65;
+
+
+    /* Selection */
+
+    --foundation-selection:
+        rgba(79, 131, 204, 0.25);
+
+}
+
+
+/*=============================================================================
+02 — LIGHT MODE
+-------------------------------------------------------------------------------
+Architectural Day / Daylight Studio
+=============================================================================*/
+
+.theme-light {
+
+    /* Surfaces */
+
+    --foundation-background:
+        #f2f0ea;
+
+    --foundation-surface:
+        #e7e5df;
+
+    --foundation-surface-editor:
+        #faf9f5;
+
+    --foundation-surface-raised:
+        #e1dfd8;
+
+    --foundation-surface-hover:
+        #dad8d1;
+
+    --foundation-surface-active:
+        #d4d2cb;
+
+
+    /* Structural */
+
+    --foundation-steel:
+        #b8bab8;
+
+    --foundation-steel-light:
+        #a6a9a7;
+
+    --foundation-border:
+        #cbc9c2;
+
+    --foundation-border-strong:
+        #aeb0ad;
+
+
+    /* Blueprint */
+
+    --foundation-blueprint:
+        #315d96;
+
+    --foundation-blueprint-light:
+        #4c76ad;
+
+    --foundation-blueprint-muted:
+        #6f89a8;
+
+    --foundation-blueprint-soft:
+        rgba(49, 93, 150, 0.09);
+
+
+    /* Construction */
+
+    --foundation-amber:
+        #b87425;
+
+    --foundation-amber-light:
+        #c98739;
+
+    --foundation-amber-soft:
+        rgba(184, 116, 37, 0.10);
+
+
+    /* Semantic */
+
+    --foundation-success:
+        #4d7f61;
+
+    --foundation-success-soft:
+        rgba(77, 127, 97, 0.10);
+
+    --foundation-warning:
+        #b87425;
+
+    --foundation-warning-soft:
+        rgba(184, 116, 37, 0.10);
+
+    --foundation-error:
+        #b64c4c;
+
+    --foundation-error-soft:
+        rgba(182, 76, 76, 0.10);
+
+    --foundation-info:
+        #315d96;
+
+    --foundation-info-soft:
+        rgba(49, 93, 150, 0.09);
+
+
+    /* Text */
+
+    --foundation-text:
+        #292c2f;
+
+    --foundation-text-secondary:
+        #626970;
+
+    --foundation-text-muted:
+        #858b90;
+
+    --foundation-text-faint:
+        #a1a5a8;
+
+
+    /* Selection */
+
+    --foundation-selection:
+        rgba(49, 93, 150, 0.18);
+
+}
+
+
+/*=============================================================================
+03 — OBSIDIAN VARIABLE MAPPING
+=============================================================================*/
+
+.theme-dark,
+.theme-light {
+
+    --background-primary:
+        var(--foundation-background);
+
+    --background-primary-alt:
+        var(--foundation-surface);
+
+    --background-secondary:
+        var(--foundation-surface);
+
+    --background-secondary-alt:
+        var(--foundation-surface-raised);
+
+    --background-modifier-border:
+        var(--foundation-border);
+
+    --background-modifier-border-hover:
+        var(--foundation-border-strong);
+
+    --background-modifier-hover:
+        var(--foundation-blueprint-soft);
+
+    --background-modifier-active-hover:
+        var(--foundation-blueprint-soft);
+
+    --background-modifier-form-field:
+        var(--foundation-surface-editor);
+
+    --background-modifier-form-field-highlighted:
+        var(--foundation-surface-raised);
+
+
+    --text-normal:
+        var(--foundation-text);
+
+    --text-muted:
+        var(--foundation-text-muted);
+
+    --text-faint:
+        var(--foundation-text-faint);
+
+    --text-accent:
+        var(--foundation-blueprint);
+
+    --text-accent-hover:
+        var(--foundation-blueprint-light);
+
+
+    --interactive-normal:
+        var(--foundation-surface);
+
+    --interactive-hover:
+        var(--foundation-surface-hover);
+
+    --interactive-accent:
+        var(--foundation-blueprint);
+
+    --interactive-accent-hover:
+        var(--foundation-blueprint-light);
+
+
+    --scrollbar-bg:
+        var(--foundation-surface);
+
+    --scrollbar-thumb-bg:
+        var(--foundation-steel);
+
+    --scrollbar-active-thumb-bg:
+        var(--foundation-blueprint);
+
+
+    --tag-background:
+        var(--foundation-blueprint-soft);
+
+    --tag-color:
+        var(--foundation-blueprint);
+
+    --tag-border-color:
+        var(--foundation-blueprint-muted);
+
+
+    --link-color:
+        var(--foundation-blueprint);
+
+    --link-color-hover:
+        var(--foundation-blueprint-light);
+
+
+    --code-background:
+        var(--foundation-surface);
+
+    --code-normal:
+        var(--foundation-text);
+
+
+    --hr-color:
+        var(--foundation-border);
+
+
+    --blockquote-border-color:
+        var(--foundation-blueprint);
+
+
+    --table-border-color:
+        var(--foundation-border);
+
+}
+
+
+/*=============================================================================
+04 — BASE
+=============================================================================*/
+
+body {
+
+    font-family:
+        var(--foundation-font-ui);
+
+    color:
+        var(--foundation-text);
+
+    background:
+        var(--foundation-background);
+
+}
+
+
+.app-container {
+
+    background:
+        var(--foundation-background);
+
+}
+
+
+.workspace {
+
+    background:
+        var(--foundation-background);
+
+}
+
+
+::selection {
+
+    background:
+        var(--foundation-selection);
+
+}
+
+
+/*=============================================================================
+05 — SCROLLBARS
+-------------------------------------------------------------------------------
+Chromium / Electron compatible.
+No scrollbar-width.
+No scrollbar-color.
+=============================================================================*/
+
+::-webkit-scrollbar {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--foundation-background);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        var(--foundation-steel);
+
+    border:
+        2px solid var(--foundation-background);
+
+    border-radius:
+        4px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+06 — TYPOGRAPHY
+=============================================================================*/
+
+.markdown-source-view,
+.markdown-preview-view {
+
+    font-family:
+        var(--foundation-font-reading);
+
+}
+
+
+.markdown-preview-view {
+
+    color:
+        var(--foundation-text);
+
+    line-height:
+        1.7;
+
+}
+
+
+/* Reading width */
+
+.markdown-preview-view .markdown-preview-sizer,
+.markdown-source-view.mod-cm6 .cm-sizer {
+
+    width:
+        min(100%, var(--foundation-content-width));
+
+    max-width:
+        var(--foundation-content-width);
+
+    margin:
+        0 auto;
+
+    padding-left:
+        var(--foundation-space-7);
+
+    padding-right:
+        var(--foundation-space-7);
+
+}
+
+
+/*=============================================================================
+07 — HEADINGS
+=============================================================================*/
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+
+    color:
+        var(--foundation-text);
+
+    font-family:
+        var(--foundation-font-ui);
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -0.015em;
+
+}
+
+
+.markdown-preview-view h1 {
+
+    font-size:
+        2.15em;
+
+    line-height:
+        1.2;
+
+    margin-top:
+        1.4em;
+
+    margin-bottom:
+        0.7em;
+
+    padding-bottom:
+        0.3em;
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.markdown-preview-view h2 {
+
+    font-size:
+        1.55em;
+
+    line-height:
+        1.3;
+
+    margin-top:
+        1.7em;
+
+    padding-bottom:
+        0.25em;
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.markdown-preview-view h3 {
+
+    font-size:
+        1.25em;
+
+    margin-top:
+        1.5em;
+
+}
+
+
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+
+    font-size:
+        1em;
+
+}
+
+
+/* Blueprint structural line */
+
+.markdown-preview-view h1::before {
+
+    content:
+        "";
+
+    display:
+        inline-block;
+
+    width:
+        3px;
+
+    height:
+        0.85em;
+
+    margin-right:
+        10px;
+
+    vertical-align:
+        -0.08em;
+
+    background:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+08 — LINKS
+=============================================================================*/
+
+.markdown-preview-view a,
+.cm-hmd-internal-link,
+.cm-link {
+
+    color:
+        var(--foundation-blueprint);
+
+    text-decoration:
+        none;
+
+}
+
+
+.markdown-preview-view a:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover {
+
+    color:
+        var(--foundation-blueprint-light);
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        3px;
+
+}
+
+
+.external-link {
+
+    background-image:
+        none;
+
+}
+
+
+/*=============================================================================
+09 — EMPHASIS
+=============================================================================*/
+
+strong {
+
+    color:
+        var(--foundation-text);
+
+    font-weight:
+        650;
+
+}
+
+
+em {
+
+    color:
+        var(--foundation-text-secondary);
+
+}
+
+
+.markdown-preview-view mark {
+
+    color:
+        inherit;
+
+    background:
+        var(--foundation-amber-soft);
+
+    border-bottom:
+        1px solid var(--foundation-amber);
+
+    padding:
+        0 3px;
+
+}
+
+
+del {
+
+    color:
+        var(--foundation-text-muted);
+
+}
+
+
+/*=============================================================================
+10 — INLINE CODE
+=============================================================================*/
+
+.markdown-preview-view code,
+.cm-inline-code {
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.9em;
+
+    color:
+        var(--foundation-text);
+
+    background:
+        var(--foundation-surface-raised);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+    padding:
+        2px 5px;
+
+}
+
+
+/*=============================================================================
+11 — CODE BLOCKS
+=============================================================================*/
+
+.markdown-preview-view pre {
+
+    position:
+        relative;
+
+    margin:
+        1.5em 0;
+
+    padding:
+        18px;
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-left:
+        3px solid var(--foundation-blueprint);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+    box-shadow:
+        var(--foundation-shadow-sm);
+
+}
+
+
+.markdown-preview-view pre code {
+
+    display:
+        block;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.88em;
+
+    line-height:
+        1.65;
+
+}
+
+
+/*=============================================================================
+12 — BLOCKQUOTES
+=============================================================================*/
+
+.markdown-preview-view blockquote {
+
+    margin:
+        1.5em 0;
+
+    padding:
+        12px 18px;
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    border-left:
+        2px solid var(--foundation-blueprint);
+
+    color:
+        var(--foundation-text-secondary);
+
+}
+
+
+.markdown-preview-view blockquote::before {
+
+    content:
+        "NOTE";
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--foundation-blueprint);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        var(--foundation-label-spacing);
+
+}
+
+
+/*=============================================================================
+13 — HORIZONTAL RULE
+=============================================================================*/
+
+.markdown-preview-view hr {
+
+    border:
+        0;
+
+    border-top:
+        1px solid var(--foundation-border);
+
+    margin:
+        2.5em 0;
+
+}
+
+
+/*=============================================================================
+14 — LISTS
+=============================================================================*/
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+
+    padding-left:
+        1.6em;
+
+}
+
+
+.markdown-preview-view li {
+
+    padding:
+        2px 0;
+
+}
+
+
+.markdown-preview-view ul > li::marker {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+.markdown-preview-view ol > li::marker {
+
+    color:
+        var(--foundation-text-secondary);
+
+    font-family:
+        var(--foundation-font-mono);
+
+}
+
+
+/*=============================================================================
+15 — TASKS
+=============================================================================*/
+
+.task-list-item-checkbox {
+
+    appearance:
+        none;
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    margin-right:
+        7px;
+
+    vertical-align:
+        -2px;
+
+    border:
+        1px solid var(--foundation-steel-light);
+
+    border-radius:
+        3px;
+
+    background:
+        var(--foundation-surface);
+
+    cursor:
+        pointer;
+
+}
+
+
+.task-list-item-checkbox:hover {
+
+    border-color:
+        var(--foundation-blueprint);
+
+}
+
+
+.task-list-item-checkbox:checked {
+
+    background:
+        var(--foundation-success);
+
+    border-color:
+        var(--foundation-success);
+
+}
+
+
+.task-list-item-checkbox:checked::after {
+
+    content:
+        "✓";
+
+    display:
+        block;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    line-height:
+        14px;
+
+    text-align:
+        center;
+
+}
+
+
+/*=============================================================================
+16 — TABLES
+-------------------------------------------------------------------------------
+Engineering schedule aesthetic.
+=============================================================================*/
+
+.markdown-preview-view table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--foundation-surface-editor);
+    border: 1px solid var(--foundation-border);
+    border-radius: var(--foundation-radius-md);
+    overflow: hidden;
+}
+
+.markdown-preview-view th,
+.markdown-preview-view td {
+    background: var(--foundation-surface-editor);
+}
+
+.markdown-preview-view th {
+    padding: 10px 12px;
+    color: var(--foundation-text);
+    border-bottom: 1px solid var(--foundation-border-strong);
+    font-family: var(--foundation-font-mono);
+    font-size: 0.78em;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.markdown-preview-view td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--foundation-border);
+}
+
+.markdown-preview-view tr:last-child td {
+    border-bottom: 0;
+}
+
+/* No zebra striping or hover background */
+.markdown-preview-view tbody tr,
+.markdown-preview-view tbody tr:nth-child(even),
+.markdown-preview-view tbody tr:nth-child(odd),
+.markdown-preview-view tbody tr:hover {
+    background: var(--foundation-surface-editor);
+}
+
+/*=============================================================================
+17 — TAGS
+=============================================================================*/
+
+.tag {
+
+    display:
+        inline-block;
+
+    padding:
+        2px 7px;
+
+    color:
+        var(--foundation-blueprint);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+    border:
+        1px solid var(--foundation-blueprint-muted);
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.76em;
+
+    text-decoration:
+        none;
+
+}
+
+
+.tag:hover {
+
+    color:
+        var(--foundation-blueprint-light);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+    border-color:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+18 — CALLOUTS
+-------------------------------------------------------------------------------
+Engineering documentation system.
+=============================================================================*/
+
+.callout {
+
+    margin:
+        1.4em 0;
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-left:
+        3px solid var(--callout-color, var(--foundation-blueprint));
+
+    border-radius:
+        var(--foundation-radius-md);
+
+    box-shadow:
+        none;
+
+}
+
+
+.callout-title {
+
+    min-height:
+        34px;
+
+    padding:
+        9px 12px;
+
+    background:
+        transparent;
+
+    color:
+        var(--foundation-text);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.74em;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        var(--foundation-label-spacing);
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.callout-content {
+
+    padding:
+        0 14px 14px;
+
+    color:
+        var(--foundation-text-secondary);
+
+}
+
+
+/* Specification */
+
+.callout[data-callout="note"],
+.callout[data-callout="info"] {
+
+    --callout-color:
+        var(--foundation-blueprint);
+
+}
+
+
+/* Design guidance */
+
+.callout[data-callout="tip"],
+.callout[data-callout="example"] {
+
+    --callout-color:
+        var(--foundation-success);
+
+}
+
+
+/* Warning */
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"] {
+
+    --callout-color:
+        var(--foundation-amber);
+
+}
+
+
+/* Critical */
+
+.callout[data-callout="important"],
+.callout[data-callout="danger"] {
+
+    --callout-color:
+        var(--foundation-error);
+
+}
+
+
+/* Verified */
+
+.callout[data-callout="success"] {
+
+    --callout-color:
+        var(--foundation-success);
+
+}
+
+
+/* Custom engineering vocabulary */
+
+.callout[data-callout="spec"],
+.callout[data-callout="specification"] {
+
+    --callout-color:
+        var(--foundation-blueprint);
+
+}
+
+
+.callout[data-callout="design"] {
+
+    --callout-color:
+        var(--foundation-blueprint-light);
+
+}
+
+
+.callout[data-callout="check"],
+.callout[data-callout="verified"] {
+
+    --callout-color:
+        var(--foundation-success);
+
+}
+
+
+/*=============================================================================
+19 — PROPERTIES
+-------------------------------------------------------------------------------
+Technical specification sheet / drawing title block.
+=============================================================================*/
+
+.metadata-container {
+
+    margin:
+        0 0 24px;
+
+    padding:
+        14px 16px;
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-top:
+        2px solid var(--foundation-blueprint);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+.metadata-properties-heading {
+
+    color:
+        var(--foundation-blueprint);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        var(--foundation-label-spacing);
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.metadata-property {
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.metadata-property:last-child {
+
+    border-bottom:
+        0;
+
+}
+
+
+.metadata-property-key {
+
+    color:
+        var(--foundation-text-secondary);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.78em;
+
+}
+
+
+.metadata-property-value {
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+/*=============================================================================
+20 — FRONTMATTER
+=============================================================================*/
+
+.frontmatter.language-yaml {
+
+    font-family:
+        var(--foundation-font-mono);
+
+}
+
+
+.frontmatter {
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-left:
+        3px solid var(--foundation-blueprint);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+/*=============================================================================
+21 — FILE EXPLORER
+-------------------------------------------------------------------------------
+Building directory.
+=============================================================================*/
+
+.nav-folder-title,
+.nav-file-title {
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+    transition:
+        background var(--foundation-transition-fast),
+        color var(--foundation-transition-fast);
+
+}
+
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.nav-file-title.is-active {
+
+    color:
+        var(--foundation-blueprint);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+    border-left:
+        2px solid var(--foundation-blueprint);
+
+}
+
+
+.nav-folder-title {
+
+    color:
+        var(--foundation-text-secondary);
+
+    font-weight:
+        600;
+
+}
+
+
+/*=============================================================================
+22 — SIDEBARS
+=============================================================================*/
+
+.workspace-ribbon {
+
+    background:
+        var(--foundation-surface);
+
+    border-right:
+        1px solid var(--foundation-border);
+
+}
+
+
+.workspace-tab-header-container {
+
+    background:
+        var(--foundation-surface);
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.workspace-tab-header {
+
+    color:
+        var(--foundation-text-muted);
+
+}
+
+
+.workspace-tab-header:hover {
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+.workspace-tab-header.is-active {
+
+    color:
+        var(--foundation-blueprint);
+
+    box-shadow:
+        inset 0 -2px 0 var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+23 — TABS
+-------------------------------------------------------------------------------
+Rooms / working spaces.
+=============================================================================*/
+
+.workspace-tab-header-inner {
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+.workspace-tab-header.is-active
+.workspace-tab-header-inner {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+/*=============================================================================
+24 — SEARCH
+=============================================================================*/
+
+.search-input-container {
+
+    background:
+        var(--foundation-surface-editor);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+.search-input-container:focus-within {
+
+    border-color:
+        var(--foundation-blueprint);
+
+    box-shadow:
+        0 0 0 2px var(--foundation-blueprint-soft);
+
+}
+
+
+.search-result-file-title {
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+.search-result-file-matched-text {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+25 — BUTTONS
+=============================================================================*/
+
+button {
+
+    font-family:
+        var(--foundation-font-ui);
+
+}
+
+
+button.mod-cta {
+
+    background:
+        var(--foundation-blueprint);
+
+    color:
+        white;
+
+    border:
+        1px solid var(--foundation-blueprint);
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+button.mod-cta:hover {
+
+    background:
+        var(--foundation-blueprint-light);
+
+    border-color:
+        var(--foundation-blueprint-light);
+
+}
+
+
+/*=============================================================================
+26 — INPUTS
+=============================================================================*/
+
+input,
+textarea,
+select {
+
+    color:
+        var(--foundation-text);
+
+    background:
+        var(--foundation-surface-editor);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color:
+        var(--foundation-blueprint);
+
+    outline:
+        2px solid var(--foundation-blueprint-soft);
+
+    outline-offset:
+        0;
+
+}
+
+
+/*=============================================================================
+27 — DROPDOWNS / MENUS
+=============================================================================*/
+
+.menu {
+
+    background:
+        var(--foundation-surface-raised);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+    box-shadow:
+        var(--foundation-shadow-md);
+
+}
+
+
+.menu-item {
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+.menu-item:hover {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.menu-item.selected {
+
+    color:
+        var(--foundation-blueprint);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+/*=============================================================================
+28 — MODALS
+=============================================================================*/
+
+.modal-container {
+
+    background:
+        rgba(17, 20, 23, 0.45);
+
+}
+
+
+.modal {
+
+    background:
+        var(--foundation-surface-raised);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-lg);
+
+    box-shadow:
+        var(--foundation-shadow-md);
+
+}
+
+
+/*=============================================================================
+29 — STATUS BAR
+-------------------------------------------------------------------------------
+Keep real Obsidian information. No fabricated telemetry.
+=============================================================================*/
+
+.status-bar {
+
+    background:
+        var(--foundation-surface);
+
+    border-top:
+        1px solid var(--foundation-border);
+
+    color:
+        var(--foundation-text-muted);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.72rem;
+
+}
+
+
+.status-bar-item:hover {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+30 — BACKLINKS / OUTGOING LINKS
+=============================================================================*/
+
+.backlink-pane,
+.outgoing-link-pane {
+
+    border-top:
+        1px solid var(--foundation-border);
+
+}
+
+
+.tree-item-self:hover {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.tree-item-self.is-active {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+31 — EMBEDS
+-------------------------------------------------------------------------------
+Integrated building modules.
+=============================================================================*/
+
+.markdown-embed {
+
+    margin:
+        1.2em 0;
+
+    padding:
+        14px 18px;
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-left:
+        2px solid var(--foundation-steel);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+.markdown-embed-title {
+
+    color:
+        var(--foundation-blueprint);
+
+    font-family:
+        var(--foundation-font-mono);
+
+    font-size:
+        0.72rem;
+
+    letter-spacing:
+        var(--foundation-label-spacing);
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*=============================================================================
+32 — GRAPH VIEW
+-------------------------------------------------------------------------------
+Structural plan.
+No constellation / cosmic glow treatment.
+=============================================================================*/
+
+.graph-view {
+
+    background:
+        var(--foundation-background);
+
+}
+
+
+.graph-view.color-fill {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+.graph-view.color-circle {
+
+    color:
+        var(--foundation-blueprint);
+
+}
+
+
+.graph-view.color-line {
+
+    color:
+        var(--foundation-steel);
+
+}
+
+
+.graph-view.color-text {
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+/*
+Graph controls
+*/
+
+.graph-controls {
+
+    background:
+        var(--foundation-surface);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+.graph-controls .setting-item {
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+/*=============================================================================
+33 — CANVAS
+-------------------------------------------------------------------------------
+Architectural drafting board.
+=============================================================================*/
+
+.canvas-wrapper {
+
+    background-color:
+        var(--foundation-background);
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(79, 131, 204, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(79, 131, 204, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        24px 24px;
+
+}
+
+
+.canvas-node {
+
+    background:
+        var(--foundation-surface-editor);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+    box-shadow:
+        var(--foundation-shadow-sm);
+
+}
+
+
+.canvas-node.is-focused {
+
+    border-color:
+        var(--foundation-blueprint);
+
+    box-shadow:
+        0 0 0 2px var(--foundation-blueprint-soft);
+
+}
+
+
+/*=============================================================================
+34 — COMMAND PALETTE
+=============================================================================*/
+
+.prompt {
+
+    background:
+        var(--foundation-surface-raised);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-lg);
+
+}
+
+
+.suggestion-item {
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+.suggestion-item.is-selected {
+
+    color:
+        var(--foundation-text);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.suggestion-hotkey {
+
+    color:
+        var(--foundation-text-muted);
+
+    font-family:
+        var(--foundation-font-mono);
+
+}
+
+
+/*=============================================================================
+35 — FILE MENU / TITLE BAR
+=============================================================================*/
+
+.titlebar {
+
+    background:
+        var(--foundation-surface);
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.titlebar-text {
+
+    color:
+        var(--foundation-text-secondary);
+
+}
+
+
+/*=============================================================================
+36 — SETTINGS
+=============================================================================*/
+
+.vertical-tab-header {
+
+    background:
+        var(--foundation-surface);
+
+    border-right:
+        1px solid var(--foundation-border);
+
+}
+
+
+.vertical-tab-nav-item {
+
+    border-radius:
+        var(--foundation-radius-sm);
+
+}
+
+
+.vertical-tab-nav-item:hover {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.vertical-tab-nav-item.is-active {
+
+    color:
+        var(--foundation-blueprint);
+
+    background:
+        var(--foundation-blueprint-soft);
+
+    border-left:
+        2px solid var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+37 — SLIDER
+=============================================================================*/
+
+input[type="range"]::-webkit-slider-thumb {
+
+    background:
+        var(--foundation-blueprint);
+
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+
+    background:
+        var(--foundation-steel);
+
+}
+
+
+/*=============================================================================
+38 — CHECKBOX
+=============================================================================*/
+
+input[type="checkbox"] {
+
+    accent-color:
+        var(--foundation-blueprint);
+
+}
+
+
+/*=============================================================================
+39 — CODE / SOURCE MODE
+=============================================================================*/
+
+.cm-editor {
+
+    font-family:
+        var(--foundation-font-mono);
+
+}
+
+
+.cm-editor .cm-content {
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+.cm-editor .cm-activeLine {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.cm-editor .cm-activeLineGutter {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+.cm-editor .cm-selectionBackground,
+.cm-editor .cm-focused .cm-selectionBackground {
+
+    background:
+        var(--foundation-selection);
+
+}
+
+
+/*=============================================================================
+40 — FOCUS STATES
+=============================================================================*/
+
+*:focus-visible {
+
+    outline:
+        2px solid var(--foundation-blueprint);
+
+    outline-offset:
+        2px;
+
+}
+
+
+/*=============================================================================
+41 — SELECTION / DRAG STATES
+=============================================================================*/
+
+.nav-file-title.is-being-dragged,
+.nav-folder-title.is-being-dragged {
+
+    background:
+        var(--foundation-blueprint-soft);
+
+}
+
+
+/*=============================================================================
+42 — STATUS / NOTICES
+=============================================================================*/
+
+.notice {
+
+    background:
+        var(--foundation-surface-raised);
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-left:
+        3px solid var(--foundation-blueprint);
+
+    color:
+        var(--foundation-text);
+
+}
+
+
+/*=============================================================================
+43 — ERROR / WARNING STATES
+=============================================================================*/
+
+.mod-warning {
+
+    color:
+        var(--foundation-amber);
+
+}
+
+
+.mod-error {
+
+    color:
+        var(--foundation-error);
+
+}
+
+
+.mod-success {
+
+    color:
+        var(--foundation-success);
+
+}
+
+
+/*=============================================================================
+44 — IMAGE / MEDIA
+=============================================================================*/
+
+.markdown-preview-view img {
+
+    max-width:
+        100%;
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+/*=============================================================================
+45 — AUDIO / VIDEO
+=============================================================================*/
+
+.markdown-preview-view audio,
+.markdown-preview-view video {
+
+    max-width:
+        100%;
+
+    border:
+        1px solid var(--foundation-border);
+
+    border-radius:
+        var(--foundation-radius-md);
+
+}
+
+
+/*=============================================================================
+46 — MOBILE
+-------------------------------------------------------------------------------
+Compact field notebook.
+=============================================================================*/
+
+@media (max-width: 700px) {
+
+    .markdown-preview-view .markdown-preview-sizer,
+    .markdown-source-view.mod-cm6 .cm-sizer {
+
+        width:
+            100%;
+
+        max-width:
+            none;
+
+        padding-left:
+            18px;
+
+        padding-right:
+            18px;
+
+    }
+
+
+    .markdown-preview-view {
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .markdown-preview-view h1 {
+
+        font-size:
+            1.8em;
+
+    }
+
+
+    .markdown-preview-view h2 {
+
+        font-size:
+            1.4em;
+
+    }
+
+
+    .markdown-preview-view table {
+
+        font-size:
+            0.9em;
+
+    }
+
+
+    .markdown-preview-view th,
+    .markdown-preview-view td {
+
+        padding:
+            8px;
+
+    }
+
+
+    .callout {
+
+        margin:
+            1em 0;
+
+    }
+
+
+    .metadata-container {
+
+        padding:
+            12px;
+
+    }
+
+
+    .status-bar {
+
+        font-size:
+            0.68rem;
+
+    }
+
+
+    .canvas-wrapper {
+
+        background-size:
+            20px 20px;
+
+    }
+
+}
+
+
+/*=============================================================================
+47 — REDUCED MOTION
+=============================================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+    }
+
+}
+
+
+/*=============================================================================
+48 — PRINT
+=============================================================================*/
+
+@media print {
+
+    .markdown-preview-view {
+
+        color:
+            #000;
+
+        background:
+            #fff;
+
+    }
+
+
+    .markdown-preview-view h1,
+    .markdown-preview-view h2 {
+
+        color:
+            #000;
+
+    }
+
+
+    .markdown-preview-view a {
+
+        color:
+            #000;
+
+        text-decoration:
+            underline;
+
+    }
+
+}
+
+
+/*=============================================================================
+49 — FOUNDATION SIGNATURE
+-------------------------------------------------------------------------------
+Subtle architectural title-block treatment.
+=============================================================================*/
+
+.workspace-leaf-content[data-type="markdown"] .view-header {
+
+    border-bottom:
+        1px solid var(--foundation-border);
+
+}
+
+
+.workspace-leaf-content[data-type="markdown"] .view-header-title {
+
+    color:
+        var(--foundation-text);
+
+    font-weight:
+        600;
+
+}
+
+
+/*=============================================================================
+50 — FINAL CONSTRAINTS
+-------------------------------------------------------------------------------
+
+Foundation identity:
+    Structure > decoration
+    Blueprint > neon
+    Concrete > glass
+    Steel > chrome
+    Amber > warning
+    Calm > dramatic
+
+Do not add:
+    - cosmic gradients
+    - lava effects
+    - PCB traces
+    - animated grids
+    - glowing borders everywhere
+    - giant rounded cards
+    - fake engineering telemetry
+
+=============================================================================*/
