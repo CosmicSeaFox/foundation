@@ -2467,16 +2467,16 @@ Compact field notebook.
     *::after {
 
         scroll-behavior:
-            auto !important;
+            auto ;
 
         transition-duration:
-            0.01ms !important;
+            0.01ms ;
 
         animation-duration:
-            0.01ms !important;
+            0.01ms ;
 
         animation-iteration-count:
-            1 !important;
+            1 ;
 
     }
 
@@ -2559,13 +2559,5 @@ Foundation identity:
     Amber > warning
     Calm > dramatic
 
-Do not add:
-    - cosmic gradients
-    - lava effects
-    - PCB traces
-    - animated grids
-    - glowing borders everywhere
-    - giant rounded cards
-    - fake engineering telemetry
 
 =============================================================================*/
